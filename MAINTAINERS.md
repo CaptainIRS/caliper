@@ -2,6 +2,7 @@ Maintainers
 ===========
 The following are lists of the Caliper maintainers, Chat IDs are valid for [Discord](https://discord.com/channels/905194001349627914/941417677778473031)
 
+
 **Active maintainers**
 
 | Name                      | GitHub           | Chat             |
