@@ -41,9 +41,8 @@ class MarblesQueryWorkload extends WorkloadModuleBase {
             contractId: this.txIndex % 2 === 0 ? 'mymarbles' : 'yourmarbles',
             contractFunction: 'queryMarblesByOwner',
             contractArguments: [marbleOwner],
-            invokerIdentity: 'client0.org1.example.com',
-            targetPeers: ['peer0.org1.example.com'],
-            timeout: 10
+            invokerIdentity: 'client0.org1.127-0-0-1.nip.io:8080',
+            timeout: 10,
         };
 
         await this.sutAdapter.sendRequests(args);

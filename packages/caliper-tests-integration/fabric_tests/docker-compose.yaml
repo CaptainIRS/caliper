@@ -68,8 +68,3 @@ services:
         - "9001:9001"
         volumes:
         - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
-
-networks:
-  default:
-    name: fabric_test
-    external: true
