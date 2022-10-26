@@ -25,47 +25,41 @@ organizations:
   Org2:
     mspid: Org2MSP
     peers:
-    - peer0.org2.example.com
+    - org2peer-api.127-0-0-1.nip.io:8080
 
 orderers:
-    orderer.example.com:
-        url: grpcs://localhost:7050
+    orderer-api.127-0-0-1.nip.io:8080:
+        url: grpc://orderer-api.127-0-0-1.nip.io:8080
         grpcOptions:
-            ssl-target-name-override: orderer.example.com
-        tlsCACerts:
-            path: ./fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+            ssl-target-name-override: orderer-api.127-0-0-1.nip.io:8080
 
 peers:
-    peer0.org1.example.com:
-        url: grpcs://localhost:7051
+    org1peer-api.127-0-0-1.nip.io:8080:
+        url: grpc://org1peer-api.127-0-0-1.nip.io:8080
         grpcOptions:
-            ssl-target-name-override: peer0.org1.example.com
+            ssl-target-name-override: org1peer-api.127-0-0-1.nip.io
             grpc.keepalive_time_ms: 600000
-        tlsCACerts:
-            path: ./fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
-    peer0.org2.example.com:
-        url: grpcs://localhost:9051
+    org2peer-api.127-0-0-1.nip.io:8080:
+        url: grpc://org2peer-api.127-0-0-1.nip.io:8080
         grpcOptions:
-            ssl-target-name-override: peer0.org2.example.com
+            ssl-target-name-override: org2peer-api.127-0-0-1.nip.io
             grpc.keepalive_time_ms: 600000
-        tlsCACerts:
-            path: ./fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
 
 channels:
     mychannel:
         orderers:
-        - orderer.example.com
+        - orderer-api.127-0-0-1.nip.io:8080
         peers:
-            peer0.org1.example.com:
+            org1peer-api.127-0-0-1.nip.io:8080:
                 eventSource: true
-            peer0.org2.example.com:
+            org2peer-api.127-0-0-1.nip.io:8080:
                 eventSource: true
     yourchannel:
         orderers:
-        - orderer.example.com
+        - orderer-api.127-0-0-1.nip.io:8080
         peers:
-            peer0.org1.example.com:
+            org1peer-api.127-0-0-1.nip.io:8080:
                 eventSource: true
-            peer0.org2.example.com:
+            org2peer-api.127-0-0-1.nip.io:8080:
                 eventSource: true
