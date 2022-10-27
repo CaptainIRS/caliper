@@ -24,9 +24,6 @@ channels:
   - channelName: mychannel
     contracts:
     - id: mymarbles
-  - channelName: yourchannel
-    contracts:
-    - id: yourmarbles
 
 organizations:
   - mspid: Org1MSP

@@ -61,7 +61,7 @@ class MarblesInitWorkload extends WorkloadModuleBase {
         let marbleOwner = this.owners[this.txIndex % this.owners.length];
 
         let args = {
-            contractId: this.txIndex % 2 === 0 ? 'mymarbles' : 'yourmarbles',
+            contractId: 'mymarbles',
             contractFunction: 'initMarble',
             contractArguments: [marbleName, marbleColor, marbleSize, marbleOwner],
             invokerIdentity: 'client0.org1.127-0-0-1.nip.io:8080',
