@@ -38,7 +38,7 @@ class MarblesQueryWorkload extends WorkloadModuleBase {
         let marbleOwner = this.owners[this.txIndex % this.owners.length];
 
         let args = {
-            contractId: this.txIndex % 2 === 0 ? 'mymarbles' : 'yourmarbles',
+            contractId: 'mymarbles',
             contractFunction: 'queryMarblesByOwner',
             contractArguments: [marbleOwner],
             invokerIdentity: 'client0.org1.127-0-0-1.nip.io:8080',

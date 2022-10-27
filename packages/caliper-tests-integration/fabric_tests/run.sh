@@ -47,13 +47,6 @@ export MICROFAB_CONFIG='{
                 "Org1",
                 "Org2"
             ]
-        },
-        {
-            "name": "yourchannel",
-            "endorsing_organizations":[
-                "Org1",
-                "Org2"
-            ]
         }
     ]
 }'
@@ -85,7 +78,6 @@ echo "Chaincode ID: ${CHAINCODE_ID}"
 peer lifecycle chaincode install ${CHAINCODE_NAME}.tar.gz
 
 peer lifecycle chaincode approveformyorg --channelID mychannel --name mymarbles -v v0 --package-id $CHAINCODE_ID --sequence 1 --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
-peer lifecycle chaincode approveformyorg --channelID yourchannel --name yourmarbles -v v0 --package-id $CHAINCODE_ID --sequence 1 --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
 
 export CORE_PEER_LOCALMSPID=Org2MSP
 export CORE_PEER_MSPCONFIGPATH=$CFG/_msp/Org2/org2admin/msp
@@ -94,13 +86,9 @@ export CORE_PEER_ADDRESS=org2peer-api.127-0-0-1.nip.io:8080
 peer lifecycle chaincode install ${CHAINCODE_NAME}.tar.gz
 
 peer lifecycle chaincode approveformyorg --channelID mychannel --name mymarbles -v v0 --package-id $CHAINCODE_ID --sequence 1 --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
-peer lifecycle chaincode approveformyorg --channelID yourchannel --name yourmarbles -v v0 --package-id $CHAINCODE_ID --sequence 1 --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
 
 peer lifecycle chaincode commit --channelID mychannel --name mymarbles -v v0 --sequence 1  --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
 peer lifecycle chaincode querycommitted --channelID=mychannel
-
-peer lifecycle chaincode commit --channelID yourchannel --name yourmarbles -v v0 --sequence 1  --connTimeout 15s --signature-policy "OR('Org1MSP.member','Org2MSP.member')"
-peer lifecycle chaincode querycommitted --channelID=yourchannel
 
 popd
 

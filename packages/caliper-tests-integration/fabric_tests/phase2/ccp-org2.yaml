@@ -55,11 +55,3 @@ channels:
                 eventSource: true
             org2peer-api.127-0-0-1.nip.io:8080:
                 eventSource: true
-    yourchannel:
-        orderers:
-        - orderer-api.127-0-0-1.nip.io:8080
-        peers:
-            org1peer-api.127-0-0-1.nip.io:8080:
-                eventSource: true
-            org2peer-api.127-0-0-1.nip.io:8080:
-                eventSource: true
