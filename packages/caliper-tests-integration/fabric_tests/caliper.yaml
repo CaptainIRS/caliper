@@ -13,6 +13,9 @@
 #
 
 caliper:
+    fabric:
+        gateway:
+            localhost: false
     benchconfig: benchconfig.yaml
     networkconfig: networkconfig.yaml
     txupdatetime: 500
